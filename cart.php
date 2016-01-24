@@ -7,6 +7,8 @@ $extra_style = '<link rel="stylesheet" href="style/product-style.css">';
 include_once("header.php");
 setlocale(LC_MONETARY, 'en_US');
 $subtotal = 0.00;
+$shipping = number_format(0, 2);
+$total_display = 0;
 
 
 /////////////////////////////////
@@ -116,18 +118,22 @@ if (!isset($_SESSION['cart_array']) || count($_SESSION['cart_array']) < 1) {
 	echo '<div class="cart_container">';
 	//cart banner
 	echo "<div class='cart_banner'>Your Cart</div>";
-	echo '<p>Your shopping cart is empty</p></div>';
+	echo '<div id="empty">Your shopping cart is empty. Let us fix that!</div></div>';
 
 
+	//CHECKOUT SUMMARY PANEL
 	echo '<div class="checkout">';
-	echo '<h3>Summary </h3>';
-	echo '<p>Total Items: ' . $quantity_total . '</p>';
-	echo '<p>Estimated Shipping and Handling: $' . '0.00' . '</p>';
+	echo '<img class="checkout_logo" src="images/whitelogo.png">';
+	echo '<div class="summary">Total Quantity: ' . $quantity_total . '</div>';
 
-	echo "<p>Subtotal: $" . number_format($cart_total, 2) . '</p>';
-	echo "<p><a href='cart.php?clear=clear'>Empty</a></p>";
-	echo $pp_checkout;
+	echo "<div class='summary'>Subtotal: $" . $subtotal. '</div>';
+	echo '<div class="summary">Shipping and Handling: $' . $shipping . '</div>';
+	echo '<div class="summary">Total: $' . $total_display . '</div>';
+
+
+	echo '<div class="pp_button">' . $pp_checkout . '</div>';
 	echo '</div></div>';
+
 
 
 }
@@ -249,6 +255,7 @@ else {
 				echo '</div></div>'; //for cart_info and each product's row in the cart
 
 
+
 				//CALCULATING SUBTOTAL:add to total amount
 				$cart_total += $item_price;
 
@@ -267,6 +274,7 @@ else {
 		}
 
 	}
+	echo "<div class='clear'><a href='cart.php?clear=clear'>Empty</a></div>";
 	echo '</div>';
 
 	//FINISH PAYPAL CHECKOUT BUTTON
@@ -288,17 +296,23 @@ else {
 	mysqli_close($link);
 
 	$subtotal = number_format($cart_total, 2);
+
+	$total = $cart_total + $shipping;
+	$total_display = number_format($total, 2);
+
 	$_SESSION['subtotal'] = $subtotal;
 
 	//CHECKOUT SUMMARY PANEL
 	echo '<div class="checkout">';
-	echo '<h3><p>Summary </p></h3>';
-	echo '<p>Total Items: ' . $quantity_total . '</p>';
-	echo '<p>Estimated Shipping and Handling: $' . '0.00' . '</p>';
+	echo '<img class="checkout_logo" src="images/whitelogo.png">';
+	echo '<div class="summary">Total Quantity: ' . $quantity_total . '</div>';
 
-	echo "<p>Subtotal: $" . $subtotal. '</p>';
-	echo "<p><a href='cart.php?clear=clear'>Empty</a></p>";
-	echo $pp_checkout;
+	echo "<div class='summary'>Subtotal: $" . $subtotal. '</div>';
+	echo '<div class="summary">Shipping and Handling: $' . $shipping . '</div>';
+	echo '<div class="summary">Total: $' . $total_display . '</div>';
+
+
+	echo '<div class="pp_button">' . $pp_checkout . '</div>';
 	echo '</div></div>';
 
 }
