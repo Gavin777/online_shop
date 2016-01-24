@@ -40,7 +40,7 @@ echo '<div class="type_list">
 <div class="line"></div>
 <li class="type_item"><a href = "shop.php?type=all">All</a></li>
 <li class="type_item"><a href = "shop.php?type=Handcrafted_Soap">Handcrafted Soaps</a></li>
-<li class="type_item"><a href = "shop.php?type=butter">Home Whipped Body Butter</a></li><li>
+<li class="type_item"><a href = "shop.php?type=Body_Butter">Home Whipped Body Butter</a></li><li>
 <li class="type_item"><a href = "shop.php?type=candle">Scented Candles</a></li>
 <li class="type_item"><a href = "shop.php?type=scrub">Body Scrub</a></li>
 <li class="type_item"><a href = "shop.php?type=salt">Bath Salt</a></li>

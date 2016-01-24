@@ -9,10 +9,10 @@
 		<link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
 
 		<!--SCRIPT-->
-		<script type="text/javascript"src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script type="text/javascript"src="JS/jquery-1.11.1.js"></script>
 		<script type="text/javascript" scr="JS/jquery.waypoints.js"></script>
-		<script type="text/javascript" src="JS/script.js"></script>
 		<script type="text/javascript" src="JS/smoothscroll.js"></script>
+		<script type="text/javascript" src="JS/script.js"></script>
 	</head>
 	<body>
 		<!--navigation-->
