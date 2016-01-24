@@ -1,0 +1,158 @@
+/* About Page */
+
+#content-wrapper1 {
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:1550px;
+	background:white;
+}
+
+#inner-content-wrapper {
+	position:absolute;
+	top:100vh;
+	left:0;
+	width:100%;
+	height:1550px;
+	background:white;
+	z-index:3;
+}
+
+.title {
+	position:absolute;
+	font-size:120px;
+	color:white;
+	z-index:2;
+	top:calc(50% - 250px);
+	left:calc(50% - 160px);
+}
+
+/*logo and stuff */
+
+#logo-and-stuff {
+	width:100%;
+}
+
+/* List */
+
+#list-summary {
+	width:200px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:-24px;
+	margin-bottom: 150px;
+}
+.summary {
+	line-height: 1.5em;
+    font-size: 12px;
+	color:gray;
+	text-align:center;
+    font-family: latin_modern_mono10_regular;
+}
+
+#who-we-are {
+	text-align:center;
+	color:gray;
+	font-size: 24px;
+	margin-top:-50px;
+}
+
+#about-line2 {
+	margin-top:24px;
+	margin-bottom:18px;
+	width:75px;
+}
+
+#end {
+	position: relative;
+	top: 40px;
+	left: 2.5%;
+}
+
+/* About Paragraph */
+
+.column {
+    width: 29%;
+    float: left;
+    color: gray;
+    line-height: 1.5em;
+    font-size: 12px;
+    margin-left: 3%;
+    font-family: latin_modern_mono10_regular;
+}
+
+#motto {
+	font-size:24px;
+	color:black;
+}
+.about-section {
+	width: 80%;
+	height: 400px;
+
+	transition:3s; 
+	margin-left: auto;
+    margin-right: auto;
+}
+
+#end {
+	margin-bottom: 70px;
+}
+
+@media (min-height: 900px) {
+	.summary {
+		font-size: 36px;
+	}
+	.landing-wrapper {
+		display: none;
+	}
+
+	#inner-content-wrapper{
+		position: absolute;
+		top: -60px;
+		height: auto;
+	}
+	.logo {
+		padding-top:156px;
+	}
+	.about-section {
+		opacity: 1;
+		width: 65%;
+		margin-left:auto;
+		margin-right:auto;
+	}
+
+	#content-wrapper1 {
+		height: auto;
+	}
+
+	#list-summary {
+		width: 100%;
+		margin-bottom: 50%;
+	}
+
+	#end {
+		display: none;
+	}
+
+	#motto {
+		font-size:48px;
+		margin-bottom:96px;
+	}
+	.column {
+		width: 100%;
+		margin-top: 24px;
+		font-size:18px;
+		line-height:1.5em;
+	}
+
+	.footer {
+		position: absolute;
+		bottom: -150px;
+		background: white;
+	}
+
+	.footer-row-two {
+		display:none;
+	}
+}
