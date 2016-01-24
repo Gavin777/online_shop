@@ -1,11 +1,12 @@
 <?php
 
 //server that your DB is on
-$host = 'localhost';
-$database = 'jonathandb';
-$username = 'root';
-$password = '';
+$host = 'us-cdbr-iron-east-03.cleardb.net';
+$database = 'heroku_835136c3b0ec6dc';
+$username = 'bf2e5547b3763a';
+$password = '7cd482e5';
 
 $link = mysqli_connect($host, $username, $password, $database);
 
 ?>
+
