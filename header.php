@@ -22,7 +22,6 @@
 
 				<div id="white"></div>
 				<div class="shopping-container">
-					<div class="tool total">Total: <?php echo '$0.00'; ?></div>
 					<a href='shop.php'><div class='tool shop'>Shop</div></a>
 					<a href='cart.php'><div class='tool cart'>Cart</div></a>
 				</div>

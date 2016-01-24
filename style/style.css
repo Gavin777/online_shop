@@ -184,16 +184,13 @@ li {
 
 }
 
-.total {
-	top:0;
-}
 .shop {
-	top: 20px;
+	top: 0;
 
 }
 
 .cart {
-	top:40px;
+	top:20px;
 }
 
 #white {
@@ -220,4 +217,17 @@ li {
 
 	z-index:10;
 	text-align:center;
+}
+
+.row_wrapper {
+	width:240px;
+	margin:auto;
+	margin-bottom:120px;
+}
+
+.row_item {
+	width: 60px;
+	padding:6px;
+	border-radius:50%;
+	border:1px solid black;
 }
