@@ -1,11 +1,8 @@
-
-
 <?php
 
 $title = 'Thank you!';
 $extra_style = "";
 include "header.php";
-echo "hi";
 
 //http://www.geekality.net/2010/10/19/php-tutorial-paypal-payment-data-transfers-pdt/
 //using Paypal payment standard
@@ -13,7 +10,14 @@ if (isset($_GET['tx'])) {
 
 	//necessary for validating
 	$id_string = "aGTy88V7ft25FJ23hGQsrUkeyrOxKeVjxtht7J3OWGWlMijP0QlzLwerNpq";
+
 	$tx = $_GET['tx'];
+
+
+	//TESTING
+	echo $id_string  . "<br>";
+	echo $tx . "<br>";
+
 
 	//VERIFY BY SENDING BACK TO PAYPAL
 	$url = "https://www.sandbox.paypal.com/cgi-bin/webscr";
@@ -24,6 +28,11 @@ if (isset($_GET['tx'])) {
 	$req = "cmd=_notify-synch";
 	$req .= "&tx=" . $tx;
 	$req .= "&at=" . $id_string;
+
+
+	//TESTING
+	echo $req . "<br>";
+
 
 	//begin posting variables
 	$ch = curl_init();
@@ -62,7 +71,12 @@ if (isset($_GET['tx'])) {
 	//close a cURL session
 	curl_close($ch);
 
-	if ($status == 200 && strpos($curl_result, 'SUCCESS') === 0) {
+	if (($status == 200) && (strpos($curl_result, 'SUCCESS') === 0)) {
+
+
+		//TESTING
+		echo $curl_result . "<br>";
+
 
 		//parse the data
 		$lines = explode("/n", $curl_result);
@@ -97,6 +111,14 @@ if (isset($_GET['tx'])) {
         echo "EPIC FAILURE";
     }
 
+    else {
+    	echo "something went wrong";
+    }
+
+}
+
+else {
+	echo "yo idk man";
 }
 
 include "footer.php";
