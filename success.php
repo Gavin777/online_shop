@@ -45,11 +45,6 @@ if isset($_GET['tx']) {
 	//curlopt_header: true to include the header in the output
 	curl_setopt($ch, CURLOPT_HEADER , 0);
 
-	//idk what these are
-	curl_setopt($ch, CURLOPT_VERBOSE, 1);
-	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
-	curl_setopt($ch, CURLOPT_TIMEOUT, 30);
-
 	//execute the given url session, will return the result on success, false on failure
 	$curl_result = curl_exec($ch);
 
