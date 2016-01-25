@@ -41,14 +41,13 @@
 					<a href="ingredients.php">
 						<li class="sidebar-item">Ingredients</li>
 					</a>
-					<a href="shop.php">
-						<li class="sidebar-item">Store</li>
-					</a>
 					<a href="comments.php">
 						<li class="sidebar-item">Hello</li>
 					</a>
 				</ul>
+				<div class="credits">Design by Jonathan Chiu. Copyright Homeroot Creations 2016.</div>
 			</nav>
+
 
 		</div>
 		

@@ -19,6 +19,12 @@
 	z-index:3;
 }
 
+#home_wrapper {
+
+	width:74px;
+	margin:auto;
+	margin-bottom:120px;
+}
 .title {
 	position:absolute;
 	font-size:120px;

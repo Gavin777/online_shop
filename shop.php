@@ -31,8 +31,19 @@ else if (isset($_GET['type'])) {
 $type_result = mysqli_query($link, $type_query);
 $num_rows = mysqli_num_rows($type_result);
 
+//begin outputting the page
+echo '<div class="page">';
 echo '<img class="logo" src="images/logo.jpg">';
-echo '<div class="title">Crafts</div>';
+echo '<div id="icon-wrapper">
+		<nav id="prod-icon-wrapper">
+			<a href="shop.php?type=Handcrafted_Soap"><img class="prod-icon" id = "bar" src="images/soap.png"></a>
+			<a href="shop.php?type=salt"><img class="prod-icon" id = "salt" src="images/salt.png"></a>
+			<a href="shop.php?type=Body_Scrub"><img class="prod-icon" id = "bubble" src="images/scrub.png"></a>
+			<a href="shop.php?type=Body_Butter"><img class="prod-icon" id = "squeeze" src="images/butter.png"></a>
+			<a href="shop.php?type=Candle"><img class="prod-icon" id = "candle" src="images/candle.png"></a>
+	 	</nav>
+	</div>';
+echo '</div>';
 echo '<div class="prod_container">';
 echo '<div class="type_list">
 <ul class="type_ul">

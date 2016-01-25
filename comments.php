@@ -72,9 +72,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		
 	}
 }
-echo '<a href="index.php">Home</a>';
 ?>
 
+<div class="page">
+	<a href="index.php"><img class="logo" src="images/logo.jpg"></a>
+	<div class="topic">Our Secret Ingredients</div>
+</div>
+<div>
 <form action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>' method="post">
 	<ul>
 		<li>
@@ -108,6 +112,7 @@ echo '<a href="index.php">Home</a>';
 		</li>
 	</ul>
 </form>
+</div>
 
 <?php
 include 'footer.php';

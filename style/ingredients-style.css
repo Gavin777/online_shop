@@ -13,6 +13,13 @@
 	height: auto;
 }
 
+#ingredient_wrapper {
+
+	width:74px;
+	margin:auto;
+	margin-bottom:120px;
+}
+
 /* Ingredient Grid*/
 
 #grid-wrapper {

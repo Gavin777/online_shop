@@ -1,10 +1,13 @@
 <?php
-$title = "Who We Are";
+$title = "Our Secret Ingredients";
 $style = 'style/ingredients-style.css';
 $extra_style = '<link rel="stylesheet" href="style/ingredients-style.css">';
 include 'header.php';
 ?>
-
+<div class="page">
+	<img class="logo" src="images/logo.jpg">
+	<div class="topic">Our Secret Ingredients</div>
+</div>
 <!--content-->
 <div class="content-wrapper" id="ing-content-wrapper">
 	<div id="ing-wrapper">

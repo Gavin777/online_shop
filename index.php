@@ -10,9 +10,9 @@ include 'header.php';
 <img class='logo' src='images/logo.jpg'>
 
 <div class="row_wrapper">
-	<img class="row_item" src="images/house.png">
-	<img class="row_item" src="images/cart.png">
-	<img class="row_item" src="images/ingredients.png">
+	<a href="about.php"><img class="row_item" src="images/house.png"></a>
+	<a href="shop.php"><img class="row_item" src="images/cart.png"></a>
+	<a href="ingredients.php"><img class="row_item" src="images/ingredients.png"></a>
 </div>
 </div>
 <?php
