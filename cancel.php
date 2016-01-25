@@ -1,5 +1,5 @@
 <?php
-$title = Cancel Payment;
+$title = 'Cancel Payment';
 $extra_style = "";
 include "header.php";
 ?>

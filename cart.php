@@ -280,7 +280,7 @@ else {
 	//FINISH PAYPAL CHECKOUT BUTTON
 	$pp_checkout .= '
 			<input type = "hidden" name = "custom" value = "' . $prod_id_array . '">
-			<input type = "hidden" name = "notify_url" value = "https://gentle-beyond-64568.herokuapp.com//listener.php">
+			<input type = "hidden" name = "notify_url" value = "https://gentle-beyond-64568.herokuapp.com/listener.php">
 			<input type="hidden" name="charset" value="utf-8" /> 
 			<input type = "hidden" name = "rm" value = "2">
 			<input type = "hidden" name = "cbt" value = "Return to Homeroot Creations.">
@@ -288,8 +288,8 @@ else {
 			<input type = "hidden" name = "currency_code" value = "USD">
 
 			<input type = "hidden" name = "image_url" value = "#imageurl">
-			<input type = "hidden" name = "return" value = "https://gentle-beyond-64568.herokuapp.com//success.php">
-			<input type = "hidden" name = "cancel_return" value = "https://gentle-beyond-64568.herokuapp.com//cancel.php">
+			<input type = "hidden" name = "return" value = "https://gentle-beyond-64568.herokuapp.com/success.php">
+			<input type = "hidden" name = "cancel_return" value = "https://gentle-beyond-64568.herokuapp.com/cancel.php">
 
 			<input type = "image" name = "submit" value = "Paypal" src = "https://www.paypalobjects.com/webstatic/en_US/btn/btn_checkout_pp_142x27.png" alt = "Make payments with PayPal.">
 		</form>';
