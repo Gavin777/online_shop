@@ -4,9 +4,6 @@ $title = 'Thank you!';
 $extra_style = "";
 include "header.php";
 
-var_dump($_POST);
-echo "<br>hello<br>";
-var_dump($_GET);
 
 //http://www.geekality.net/2010/10/19/php-tutorial-paypal-payment-data-transfers-pdt/
 //using Paypal payment standard
@@ -16,12 +13,6 @@ if (isset($_GET['tx'])) {
 	$id_string = "WpQS5uYZlia_2RAhTKvQD26Hy8M-6Kvp4nbBrFy10YKfnJ7CiP8dsXeaeX4";
 
 	$tx = $_GET['tx'];
-
-
-	//TESTING
-	echo $id_string  . "<br>";
-	echo $tx . "<br>";
-
 
 	//VERIFY BY SENDING BACK TO PAYPAL
 	$url = "https://www.sandbox.paypal.com/cgi-bin/webscr";
@@ -33,11 +24,6 @@ if (isset($_GET['tx'])) {
 	$req = "cmd=_notify-synch";
 	$req .= "&tx=" . $tx;
 	$req .= "&at=" . $id_string;
-
-
-	//TESTING
-	echo $req . "<br>";
-
 
 	//begin posting variables
 	$ch = curl_init();
@@ -76,13 +62,8 @@ if (isset($_GET['tx'])) {
 
 	if (strpos($curl_result, 'SUCCESS') === 0) {
 
-
-		//TESTING
-		echo $curl_result . "<br>";
-
-
 		//parse the data
-		$lines = explode("/n", $curl_result);
+		$lines = explode(" ", $curl_result);
 
 		//initialize the array
 		$key_array = array();
