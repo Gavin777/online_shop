@@ -63,7 +63,9 @@ if (isset($_GET['tx'])) {
 	if (strpos($curl_result, 'SUCCESS') === 0) {
 
 		//turn each name-value pair into an array
-		$lines = explode(' ', $curl_result);
+		$lines = explode("\n", $curl_result);
+
+		var_dump($lines);
 
 		//initialize the array
 		$keyarray = array();
@@ -79,6 +81,7 @@ if (isset($_GET['tx'])) {
 
 		}//everything is now packaged in the $key_array
 
+		var_dump($keyarray);
 
 		//grab user data from array
 		$firstname = $keyarray['first_name'];
