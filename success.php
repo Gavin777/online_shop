@@ -25,6 +25,7 @@ if (isset($_GET['tx'])) {
 
 	//VERIFY BY SENDING BACK TO PAYPAL
 	$url = "https://www.sandbox.paypal.com/cgi-bin/webscr";
+	$pp_hostname = "www.sandbox.paypal.com";
 	$curl_result= '';
 	$curl_err= '';
 
@@ -57,11 +58,12 @@ if (isset($_GET['tx'])) {
 	//curlopt_postfields: the full data to post in a http post operation
 	curl_setopt($ch, CURLOPT_POSTFIELDS, $req);
 
-	//not included 
-	curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type: application/x-www-form-urlencoded", "Content-Length: " . strlen($req)));
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 1);
 
-	//curlopt_header: true to include the header in the output
-	curl_setopt($ch, CURLOPT_HEADER , 0);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
+
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array("Host: " . $pp_hostname));
+
 
 	//execute the given url session, will return the result on success, false on failure
 	$curl_result = curl_exec($ch);
@@ -113,10 +115,14 @@ if (isset($_GET['tx'])) {
 	else if (strpos ($curl_result, "FAIL") === 0) {
         // log for manual investigation
         echo "EPIC FAILURE";
+        echo $curl_result;
+        echo $curl_err;
     }
 
     else {
     	echo "something went wrong";
+    	echo $curl_result;
+    	echo $curl_err;
     }
 
 }
