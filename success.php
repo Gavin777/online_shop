@@ -62,19 +62,32 @@ if (isset($_GET['tx'])) {
 
 	if (strpos($curl_result, 'SUCCESS') === 0) {
 
+
+		//TESTING
+		var_dump($curl_result);
+
+
 		//parse the data
 		$lines = explode(" ", $curl_result);
 
+
+		//TESTING
+		var_dump($lines);
+
+
 		//initialize the array
-		$key_array = array();
+		$keyarray = array();
 
 		//gather the components of post; starts at 1 because we want to skip SUCCESS
 		for ($i = 1; $i < count($lines); $i++) {
 			list($key, $value) = explode("=", $lines[$i]);
-			$key_array[urldecode($key)] = urldecode($value);
+			$keyarray[urldecode($key)] = urldecode($value);
 
 		}//everything is now packaged in the $key_array
 
+
+		//TESTING
+		var_dump($keyarray);
 		//grab user data from array
 		$firstname = $keyarray['first_name'];
    		$lastname = $keyarray['last_name'];
