@@ -62,32 +62,24 @@ if (isset($_GET['tx'])) {
 
 	if (strpos($curl_result, 'SUCCESS') === 0) {
 
-
-		//TESTING
-		var_dump($curl_result);
-
-
-		//parse the data
-		$lines = explode(" ", $curl_result);
-
-
-		//TESTING
-		var_dump($lines);
-
+		//turn each name-value pair into an array
+		$lines = explode(' ', $curl_result);
 
 		//initialize the array
 		$keyarray = array();
 
+		//number of lines for the for loop
+		$num = 0;
+		$num = count($lines);
+
 		//gather the components of post; starts at 1 because we want to skip SUCCESS
-		for ($i = 1; $i < count($lines); $i++) {
-			list($key, $value) = explode("=", $lines[$i]);
+		for ($i = 1; $i < $num; $i++) {
+			list($key, $value) = array_pad(explode("=", $lines["" . $i]), 2, null);
 			$keyarray[urldecode($key)] = urldecode($value);
 
 		}//everything is now packaged in the $key_array
 
 
-		//TESTING
-		var_dump($keyarray);
 		//grab user data from array
 		$firstname = $keyarray['first_name'];
    		$lastname = $keyarray['last_name'];
@@ -100,10 +92,10 @@ if (isset($_GET['tx'])) {
    		$payment_status = $keyarray['payment_status'];
 
    		echo "<b>Payment Details</b><br>";
-   		echo "Name: " . $firstname . $lastname;
-    	echo "Amount: " . $amount;
-    	echo "A receipt of your payment has been emailed to " . $payer_email;
-    	echo "Your package will be shipped to: " . $adress_street . $address_city . $address_state . $address_zip;
+   		echo "Name: " . $firstname . " " . $lastname . "<br>";
+    	echo "Amount: " . $amount . "<br>";
+    	echo "A receipt of your payment has been emailed to :" . $payer_email . "<br>";
+    	echo "Your package will be shipped to: " . $address_street . "<br>" . $address_city . " " . $address_state . ", " . $address_zip;
 
 	}
 
