@@ -15,7 +15,7 @@ if (isset($_POST['txn_id'])) {
 	//necessary for validating
 	$id_string = "aGTy88V7ft25FJ23hGQsrUkeyrOxKeVjxtht7J3OWGWlMijP0QlzLwerNpq";
 
-	$tx = $_GET['tx'];
+	$tx = $_POST['txn-id'];
 
 
 	//TESTING
