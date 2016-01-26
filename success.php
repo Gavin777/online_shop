@@ -5,11 +5,12 @@ $extra_style = "";
 include "header.php";
 
 var_dump($_POST);
-echo 'hello<br>';
+echo "<br>hello<br>";
 var_dump($_GET);
+
 //http://www.geekality.net/2010/10/19/php-tutorial-paypal-payment-data-transfers-pdt/
 //using Paypal payment standard
-if (isset($_GET['tx'])) {
+if (isset($_POST['txn_id'])) {
 
 	//necessary for validating
 	$id_string = "aGTy88V7ft25FJ23hGQsrUkeyrOxKeVjxtht7J3OWGWlMijP0QlzLwerNpq";

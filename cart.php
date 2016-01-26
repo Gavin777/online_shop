@@ -282,7 +282,7 @@ else {
 			<input type = "hidden" name = "custom" value = "' . $prod_id_array . '">
 			<input type = "hidden" name = "notify_url" value = "https://gentle-beyond-64568.herokuapp.com/listener.php">
 			<input type="hidden" name="charset" value="utf-8" /> 
-			<input type = "hidden" name = "rm" value = "2">
+			<input type = "hidden" name = "rm" value = "1">
 			<input type = "hidden" name = "cbt" value = "Return to Homeroot Creations.">
 			<input type = "hidden" name = "lc" value = "US">
 			<input type = "hidden" name = "currency_code" value = "USD">
