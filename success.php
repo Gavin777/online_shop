@@ -71,13 +71,10 @@ if (isset($_GET['tx'])) {
 	//return a string that contains the last error for the current session
 	$curl_err = curl_error($ch);
 
-	//last http status
-	$status = curl_getinfo($curl_request, CURLINFO_HTTP_CODE);
-
 	//close a cURL session
 	curl_close($ch);
 
-	if (($status == 200) && (strpos($curl_result, 'SUCCESS') === 0)) {
+	if (strpos($curl_result, 'SUCCESS') === 0) {
 
 
 		//TESTING
@@ -100,15 +97,19 @@ if (isset($_GET['tx'])) {
 		//grab user data from array
 		$firstname = $keyarray['first_name'];
    		$lastname = $keyarray['last_name'];
-   		$itemname = $keyarray['item_name'];
    		$amount = $keyarray['payment_gross'];
    		$payer_email = $keyarray['payer_email'];
+   		$address_street = $keyarray['address_street'];
+   		$address_zip = $keyarray['address_zip'];
+   		$address_city = $keyarray['address_city'];
+   		$address_state = $keyarray['address_state'];
+   		$payment_status = $keyarray['payment_status'];
 
    		echo "<b>Payment Details</b><br>";
    		echo "Name: " . $firstname . $lastname;
-   		echo "Item: " . $itemname;
     	echo "Amount: " . $amount;
     	echo "A receipt of your payment has been emailed to " . $payer_email;
+    	echo "Your package will be shipped to: " . $adress_street . $address_city . $address_state . $address_zip;
 
 	}
 
