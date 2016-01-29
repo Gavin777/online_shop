@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 $title = 'Thank you!';
 $extra_style = "";
 include "header.php";
@@ -65,8 +66,6 @@ if (isset($_GET['tx'])) {
 		//turn each name-value pair into an array
 		$lines = explode("\n", $curl_result);
 
-		var_dump($lines);
-
 		//initialize the array
 		$keyarray = array();
 
@@ -81,7 +80,6 @@ if (isset($_GET['tx'])) {
 
 		}//everything is now packaged in the $key_array
 
-		var_dump($keyarray);
 
 		//grab user data from array
 		$firstname = $keyarray['first_name'];
@@ -92,25 +90,41 @@ if (isset($_GET['tx'])) {
    		$address_zip = $keyarray['address_zip'];
    		$address_city = $keyarray['address_city'];
    		$address_state = $keyarray['address_state'];
-   		$payment_status = $keyarray['payment_status'];
 
+
+   		$payment_status = $keyarray['payment_status']; //needs to be "Completed"
+   		$address_status = $keyarray['address_status']; //needs to be "confirmed"
+   		$email = $keyarray['business']; //my email
+   		$transaction_id = $keyarray['txn_id']; //unique transaction id
+
+
+   		//success message output
    		echo "<b>Payment Details</b><br>";
    		echo "Name: " . $firstname . " " . $lastname . "<br>";
     	echo "Amount: " . $amount . "<br>";
     	echo "A receipt of your payment has been emailed to :" . $payer_email . "<br>";
     	echo "Your package will be shipped to: " . $address_street . "<br>" . $address_city . " " . $address_state . ", " . $address_zip;
 
+    	/////////////////////////////////
+		//     EMPTY CART FUNCTION
+		/////////////////////////////////
+
+		if (isset($_SESSION['cart_array'])) {
+			unset($_SESSION['cart_array']);
+			
+		}
+
 	}
 
 	else if (strpos ($curl_result, "FAIL") === 0) {
         // log for manual investigation
-        echo "EPIC FAILURE";
+        echo "Don't mess with me man.";
         echo $curl_result;
         echo $curl_err;
     }
 
     else {
-    	echo "something went wrong";
+    	echo "Yo this shiz broke.";
     	echo $curl_result;
     	echo $curl_err;
     }
@@ -120,6 +134,7 @@ if (isset($_GET['tx'])) {
 else {
 	echo "yo idk man";
 }
+
 
 include "footer.php";
 ?>
