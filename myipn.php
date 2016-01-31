@@ -17,6 +17,7 @@ if ($homeroot_email != $_POST['business']) {
 	exit();
 }
 
+
 //possible values for payment_status
 $payment_cancelled_reversal = 'Cancelled_Reversal'; //
 $payment_completed = 'Completed';//
@@ -28,6 +29,7 @@ $payment_refunded = 'Refunded'; //
 $payment_reversed = 'Reversed';//
 $payment_processed = 'Processed'; 
 $payment_voided = 'Voided'; //
+
 
 //STEP 2: CHECK PAYMENT STATUS IS COMPLETED
 require_once 'php/connection.php';
@@ -55,43 +57,44 @@ if ($payment_refunded == $_POST['payment_status'] || $payment_reversed == $_POST
 
 	else if ($check_rows == 1) {
 
-	//check that total matches
-	$expected_total = 0.00;
-	$purchase_details = rtrim($_POST['custom'], ",");
-	$purchase_array = explode(",", $purchase_details);
-	
-	}
-
-	//add up the prices
-	foreach($purchase_array as $item) {
-
-		$item_details = explode("-", $item);
-		$price_query = 'SELECT PRICE FROM products WHERE ID = "' . $item_details[0] . '"';
-		$price_result = mysqli_query($link, $price_query);
-		$price = mysqli_fetch_array($price_result);
-		$expected_total += $price['PRICE'] * $item_details[1];
-
-	}
-
-	//if the prices do not match
-	if ($expected_total != $_POST['mc_gross']) {
-
-		//someone is messing with you
-		echo 'wrong price';
-		echo $expected_total . '<br>';
-		echo $_POST['mc_gross'];
-		exit();
+		//check that total matches
+		$expected_total = 0.00;
+		$purchase_details = rtrim($_POST['custom'], ",");
+		$purchase_array = explode(",", $purchase_details);
 		
-	}
+		
 
-	//if the prices do match
-	elseif ($expected_total == $_POST['mc_gross']) {
+		//add up the prices
+		foreach($purchase_array as $item) {
 
-	//update txn_id with new txn_id
-	$query = 'UPDATE transactions SET txn_id = "' . $new_txn_id . '", payment_status = "' . $_POST['payment_status'] . '" WHERE txn_id = "' . $id_search .'"';
-	echo $query;
-	$update_result = mysqli_query($link, $query);
-	exit();
+			$item_details = explode("-", $item);
+			$price_query = 'SELECT PRICE FROM products WHERE ID = "' . $item_details[0] . '"';
+			$price_result = mysqli_query($link, $price_query);
+			$price = mysqli_fetch_array($price_result);
+			$expected_total += $price['PRICE'] * $item_details[1];
+
+		}
+
+		//if the prices do not match
+		if ($expected_total != $_POST['mc_gross']) {
+
+			//someone is messing with you
+			echo 'wrong price';
+			echo $expected_total . '<br>';
+			echo $_POST['mc_gross'];
+			exit();
+			
+		}
+
+		//if the prices do match
+		elseif ($expected_total == $_POST['mc_gross']) {
+
+		//update txn_id with new txn_id
+		$query = 'UPDATE transactions SET txn_id = "' . $new_txn_id . '", payment_status = "' . $_POST['payment_status'] . '" WHERE txn_id = "' . $id_search .'"';
+		echo $query;
+		$update_result = mysqli_query($link, $query);
+		exit();
+		}
 	}
 
 
@@ -103,6 +106,7 @@ if ($payment_refunded == $_POST['payment_status'] || $payment_reversed == $_POST
 elseif ($payment_completed == $_POST['payment_status']) {
 
 	//STEP 3: CHECK TXN_ID IS ORIGINAL
+	echo 'payment complete';
 
 	$txn_id = $_POST['txn_id'];
 	$txn_check = 'SELECT * FROM transactions WHERE txn_id = "' . $txn_id . '"';

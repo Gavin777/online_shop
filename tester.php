@@ -1,5 +1,5 @@
 <?php
-$_POST = eval('return ' . file_get_contents('export6.txt') . ';');
+$_POST = eval('return ' . file_get_contents('export7.txt') . ';');
 
 if (!isset($_GET['f'])) {
 	echo 'file must be supplied';
