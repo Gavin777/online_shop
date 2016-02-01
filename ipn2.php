@@ -277,6 +277,21 @@ if (isset($_POST)) {
 			$transaction_input = mysqli_query($link, $new_transaction);
 			echo 'we gucci';
 
+			foreach ($purchase_array as $item) {
+
+				$item_quantity = explode('-', $item);
+
+				$get_quantity = 'SELECT QUANTITY FROM PRODUCTS WHERE ID = "' . $item_quantity[0] . '"';
+				$get_quantity = mysqli_query($link, $get_quantity);
+				$quantity_array = mysqli_fetch_array($get_quantity);
+
+				//new quantity
+				$update = $quantity_array[0] - $item_quantity[1];
+				$update_quantity = 'UPDATE products SET QUANTITY = "' . $update . '" WHERE ID = "' . $item_quantity[0] . '"';
+				$update_query = mysqli_query($update_quantity);
+
+			}
+
 		}
 	}
 

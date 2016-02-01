@@ -112,11 +112,14 @@ elseif ($payment_completed == $_POST['payment_status']) {
 	$txn_check = 'SELECT * FROM transactions WHERE txn_id = "' . $txn_id . '"';
 	$check_result = mysqli_query($link, $txn_check);
 	$txn_duplicate = mysqli_num_rows($check_result);
-
+	echo $txn_check;
 	if ($txn_duplicate > 0) {
 
 		//someone is messing with you
 		echo 'duplicate txn';
+		echo $txn_duplicate;
+		var_dump($check_result);
+		echo $_POST['txn_id'];
 		exit();
 	}
 
