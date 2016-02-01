@@ -45,6 +45,8 @@ if (isset($_POST)) {
 		if ($homeroot_email != $_POST['business']) {
 			//email being used is not ours
 			echo "this isn't my email";
+			echo '<br>';
+			echo $_POST['business'];
 			exit();
 		}
 
@@ -70,6 +72,9 @@ if (isset($_POST)) {
 		if ($payment_refunded == $_POST['payment_status'] || $payment_reversed == $_POST['payment_status'] || $payment_cancelled_reversal == $_POST['payment_status']) {
 
 			echo 'bad payment';
+			echo '<br>';
+			echo $_POST['payment_status'];
+
 			//parent_txn_id contains the txn_id of original transaction
 			$id_search = $_POST['parent_txn_id'];
 			$new_txn_id = $_POST['txn_id'];
@@ -83,6 +88,8 @@ if (isset($_POST)) {
 
 				//someone is messing with you
 				echo 'duplicate txn';
+				echo '<br>';
+				echo $_POST['parent_txn_id'];
 				exit();
 			}
 
