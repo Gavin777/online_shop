@@ -10,7 +10,7 @@ include_once("php/connection.php");
 //CASE 1: NO GET VARIABLE POSTED, DISPLAY BANNER AND TOP SIX PRODUCTS
 if (!isset($_GET['type'])) {
 
-	$type_query = 'SELECT * FROM products ORDER BY added DESC LIMIT 6';
+	$type_query = 'SELECT * FROM products ORDER BY added DESC LIMIT 8';
 }
 
 //CASE 2: ALL PRODUCTS

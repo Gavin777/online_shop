@@ -6,7 +6,7 @@
 		<!--CSS STYLES-->
 		<link rel="stylesheet" href="style/style.css">
 		<?php echo $extra_style; ?>
-		<link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 
 		<!--SCRIPT-->
 		<script type="text/javascript"src="JS/jquery-1.11.1.js"></script>
@@ -20,11 +20,16 @@
 			<div class="menu-div">
 				<img class="menu" src="images/menu.png">
 
+				<!--
+				<a href="cart.php"><img class = "shopping_cart" src = "images/cart.png"></a>
+
+
 				<div id="white"></div>
 				<div class="shopping-container">
 					<a href='shop.php'><div class='tool shop'>Shop</div></a>
 					<a href='cart.php'><div class='tool cart'>Cart</div></a>
 				</div>
+			-->
 
 			</div>
 			<nav class="menu-container">
@@ -40,6 +45,9 @@
 					</a>
 					<a href="ingredients.php">
 						<li class="sidebar-item">Ingredients</li>
+					</a>
+					<a href="shop.php">
+						<li class="sidebar-item">Shop</li>
 					</a>
 					<a href="comments.php">
 						<li class="sidebar-item">Hello</li>

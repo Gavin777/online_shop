@@ -13,7 +13,7 @@ include 'header.php';
 //if a session manager value already exists, go to admin page
 //admin page will check if the values actually match
 if (isset($_SESSION['manager'])) {
-	header('Location: admin.php');
+	header('Location: admin/admin.php');
 	exit();
 }
 
@@ -32,32 +32,32 @@ if (isset($_POST['submit']) && isset($_POST['login']) && isset($_POST['password'
 	mysqli_close($link);
 	
 	if ($numrows == 0) {
-		$feedback = "Incorrect Username and password combination";
+		$feedback = "Get Outta Here!";
 	}
 
 	if ($numrows == 1) {
 		$_SESSION['manager'] = $user;
 		$_SESSION['password'] = $pass;
-		header("Location: admin.php");
+		header("Location: admin/admin.php");
 		exit();
 	}
 }	
 
 ?>
 
-<form action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>' method='post'>
-	<p class='error'><?php echo $feedback; ?></p>
-	<ul>
-		<li>
-			<label for='login'>Login:</label>
+<form action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>' id='login_form' method='post'>
+	<div class='error'><?php echo $feedback; ?></div>
+	<ul id = "login_list">
+		<li class = "login_item">
+			<div id='login'>Login:</div>
 			<input type='text' name='login' id='login' />
 		</li>
-		<li>
-			<label for='password'>Password: </label>
+		<li class = "login_item">
+			<div id='password'>Password: </div>
 			<input type='password' name='password' id='password' />
 		</li>
-		<li>
-			<input type='submit' value='submit' name='submit'/>
+		<li class = "login_item">
+			<input type='submit' id="login_submit" value='submit' name='submit'/>
 		</li>
 	</ul>
 </form>

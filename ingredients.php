@@ -13,8 +13,10 @@ include 'header.php';
 	<div id="ing-wrapper">
 		<div id="ing-desc-wrapper">
 			<nav id = "sticky-ing">
-				<div id="intro-desc">Our crafts are comprised of these: ingredients designed to improve the skin, for every type of skin. Whether it's dry skin or oily, tough skin or delicate, we've thought of you already! We employ only the finest ingredients, aiming to be the freshest and most natural, because that is what artisan soapmaking is all about. Now let these ingredients speak for us to tell you that we genuinely care about your well-being!<br><br>
-				We have split all our ingredients into 9 categories ranging from oils to clay. The purpose of this is for you to know what we put in our craft and why we do so. Why the transparency? <br><br>Because <em>you deserve to know what you put in your body.</em>
+				<div id="intro-desc">Our crafts are created from ingredients carefully selected to benefit your skin and health. Whether you have dry or oily skin, tough or delicate skin, we have created our finest attempts to solve these problems! 
+					We employ only the finest ingredients, aiming to be the freshest and most natural, because that is what artisan soapmaking is all about. 
+					Now let these ingredients speak for us to tell you that we genuinely care about your well-being!<br><br>
+					We have split all our ingredients into nine categories ranging from oils to clay. We want you to know what we put in our craft and why we do so. Why the transparency? <br><br>Because <em>you deserve to know what you put in your body.</em>
 				</div>
 				<div class = "for" id = "0-text">
 					<div class="ing-grid-text">

@@ -1,0 +1,183 @@
+#admin {
+
+	width: 400px;
+    height: 240px;
+    border: 2px solid #4E3939;
+    text-align: center;
+    margin: auto;
+    color: #4E3939;
+    margin-top: 20vh;
+    border-radius:4px;
+}
+
+h3#adminh3 {
+
+	margin-top:42px;
+}
+
+.quick {
+	text-align:center;
+}
+
+table {
+	width:1000px;
+	margin:auto;
+}
+
+td {
+	padding:6px;
+}
+
+.admin_control {
+
+	color:#4E3939;
+}
+
+.welcome {
+	position:absolute;
+	top:6px;
+	left:6px;
+	color: #4E3939;
+
+}
+
+.power {
+	position:fixed;
+	height:48px;
+	top:60px;
+	right:6px;
+	transition:0.5s;
+	z-index:5;
+}
+
+.black {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background: black;
+    left: 0;
+    top: 0;
+    opacity: 0.3;
+}
+
+.module {
+	position: fixed;
+    left: calc(50% - 496px);
+    top: 180px;
+    background: white;
+    width: 1000px;
+}
+
+.module-table {
+
+	font-size:12px;
+}
+
+.item_form {
+	position: fixed;
+    left: calc(50% - 200px);
+    top: 48px;
+    margin: auto;
+    width: 400px;
+    background:white;
+}
+
+#new_item {
+	text-align:center;
+	width:400px;
+	padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+#new_item_button {
+    text-align: center;
+    width: 360px;
+    height: 26px;
+    margin: auto;
+    background: pink;
+    margin-top: 24px;
+    padding-top: 6px;
+
+}
+
+.prod {
+	width:360px;
+	font-family:latin_modern_mono10_regular;
+	font-size:12px;
+	text-align:center;
+
+
+}
+
+.regular {
+	height:30px;
+	margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.prod_text{
+	height:96px;
+}
+
+.x_item {
+	position: absolute;
+    height: 36px;
+    top: -36px;
+    right: -36px;
+    transition: 0.5s;
+    z-index: 8;
+}
+.x_item:hover {
+	transform: rotate(180deg);
+}
+
+/* Inventory Edit */
+
+form#edit_item {
+    width:400px;
+    text-align:center;
+    padding-top:12px;
+    padding-bottom:12px;
+}
+
+.prod_edit {
+    width:360px;
+    height:30px;
+    font-size:12px;
+    font-family:latin_modern_mono10_regular;
+    text-align:center;
+    margin-top:6px;
+    margin-bottom:6px;
+}
+
+/* Transaction Table */
+
+.transaction {
+    width:1000px;
+    margin:auto;
+}
+
+.transaction_details {
+    position: fixed;
+    width: 1000px;
+    left: calc(50% - 500px);
+    top: 120px;
+    background: white;
+
+}
+
+td{
+    font-size:12px;
+    color:#4E3939;
+    border:1px solid #4E3939;
+}
+
+.admin_title {
+    width: 400px;
+    text-align: center;
+    margin: auto;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    font-size: 18px;
+    color:#4E3939;
+}

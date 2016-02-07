@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$email_error = "Please enter a valid email";
 	}
 	elseif ($_POST["email"] != $_POST["email2"]) {
-		$email_error = "Emails do not match";
+		$confirm_email_error = "Emails do not match";
 	}
 	else {
 		$name_error = '';
@@ -74,45 +74,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<div class="page">
-	<a href="index.php"><img class="logo" src="images/logo.jpg"></a>
-	<div class="topic">Our Secret Ingredients</div>
+<div class="landing">
+	<div class="landing_title">Contact</div>
+	<div class="landing_msg">
+		How is your day? How do you like our soaps? If you have any questions, comments, or just want to chat, we'd love to hear from you! Just drop us a line!
+	</div>
 </div>
-<div>
-<form action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>' method="post">
-	<ul>
-		<li>
-			<label for="name">Name:</label>
-			<input type="text" name="name" id="name" value = '<?php echo htmlspecialchars($name); ?>' />
-			<span class= 'error'><?php echo $name_error; ?></span>
-		</li>
-		<li>
-			<label for="email">Email:</label>
-			<input type="text" name="email" id="email" value = '<?php echo htmlspecialchars($email); ?>' />
-			<span class= 'error'><?php echo $email_error; ?></span>
-		</li>
-		<li>
-			<label for="email2">Confirm Email:</label>
-			<input type="text" name="email2" id="email2" value = '<?php echo htmlspecialchars($email2); ?>'/>
-			<span class= 'error'><?php echo $confirm_email_error; ?></span>
-		</li>
-		<li>
-			<label for="topic">Topic: </label>
-			<input type='radio' name='topic' value='other'> Other
-			<input type='radio' name='topic' value='questions'> Questions
-			<input type='radio' name='topic' value='comments'> Comments
-		</li>
-		<li>
-			<label for="message">What's up?</label>
-			<textarea id="message" name="message" cols="42" rows="9"><?php echo htmlspecialchars($message); ?></textarea>
-			<span class= 'error'><?php echo $message_error; ?></span>
-		</li>
-		<li>
-			<input type="submit" value="Submit!" />
-		</li>
-	</ul>
+
+
+
+
+<form action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>' method="post" class="comment_form">
+
+	<label for="name" class="comment">Name:</label>
+	<input type="text" name="name" id="name" class="comments reg" value = '<?php echo htmlspecialchars($name); ?>' />
+	<div class= 'error_msg'><?php echo $name_error; ?></div>
+
+	<label for="email" class="comment">Email:</label>
+	<input type="email" name="email" id="email" class="comments reg" value = '<?php echo htmlspecialchars($email); ?>' />
+	<div class= 'error_msg'><?php echo $email_error; ?></div>
+
+	<label for="email2" class="comment">Confirm Email:</label>
+	<input type="email" name="email2" id="email2" class="comments reg" value = '<?php echo htmlspecialchars($email2); ?>'/>
+	<div class= 'error_msg'><?php echo $confirm_email_error; ?></div>
+
+	<label for="message" class="comment">What's up?</label>
+	<textarea id="message" name="message" cols="42" class="comments" rows="9"><?php echo htmlspecialchars($message); ?></textarea>
+	<div class= 'error_msg'><?php echo $message_error; ?></div>
+
+	<input type="submit" value="Submit!" class="comments reg"/>
+
 </form>
-</div>
+
 
 <?php
 include 'footer.php';

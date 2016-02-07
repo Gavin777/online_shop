@@ -3,7 +3,7 @@ body {
 	font-family: latin_modern_mono10_regular;
 	font-size:12px;
 	line-height: 1.5em;
-	color:#AFA2A2;
+	color:#4E3939;
 	margin-top:0;
 	margin-right:0;
 }
@@ -65,12 +65,22 @@ a:hover {
 	z-index:5;
 	top:0;
 	right:0;
-	border-bottom:2px solid white;
+
 }
+
 .menu {
 	position:fixed;
-	height:36px;
+	height:48px;
 	top:6px;
+	right:6px;
+	transition:0.5s;
+	z-index:5;
+}
+
+.shopping_cart {
+	position:fixed;
+	height:48px;
+	top:60px;
 	right:6px;
 	transition:0.5s;
 	z-index:5;
@@ -217,6 +227,50 @@ li {
 	margin-top:30vh;
 }
 
+.rapper{
+	position: absolute;
+    width: 1200px;
+    left:calc(50% - 600px);
+    height: 100vh;
+}
+.display {
+    position: absolute;
+    width: 1000px;
+    height: 500px;
+    background: white;
+    left: calc(50% - 500px);
+    bottom: 24px;
+    overflow: hidden;
+}
+
+.home_logo {
+	width: 500px;
+    position: absolute;
+    left: calc(50% - 240px);
+    top: 108px;
+    z-index:6;
+}
+
+.icon_wrapper {
+	position: absolute;
+    width: 400px;
+    left: calc(50% - 200px);
+    text-align: center;
+    bottom: 162px;
+    z-index:6;
+}
+
+.home_image {
+	width:100%;
+	opacity:0.87;
+	margin-top: -152px;
+	transition:0.5s;
+}
+
+.home_image:hover {
+	opacity:0.7;
+}
+
 /* Footer */
 
 .footer {
@@ -248,4 +302,137 @@ li {
 	text-align: center;
     margin: auto;
     width: 200px;
+}
+
+/*Login Page */
+
+ul#login_list {
+
+	left: 0;
+    width: 400px;
+    height: 240px;
+    padding: 12px;
+    padding-top:48px;
+    margin-left: calc(50% - 200px);
+    border: 1px solid #4E3939;
+    text-align: center;
+    top: calc(50% - 180px);
+    border-radius:4px;
+
+}
+
+input#login {
+
+	width:360px;
+	height:30px;
+	text-align:center;
+	font-size:12px;
+	font-family: latin_modern_mono10_regular;
+	color: #4E3939;
+}
+
+input#password {
+
+	width:360px;
+	height:30px;
+	text-align:center;
+	color: #4E3939;
+}
+
+#login {
+	color: #4E3939;
+	font-size:12px;
+}
+
+#password {
+	color: #4E3939;
+	font-size:12px;
+}
+
+#login_submit {
+	width: 360px;
+    height: 30px;
+    margin-top:36px;
+    font-family:latin_modern_mono10_regular;
+    color: #4E3939;
+    font-size:12px;
+
+}
+
+.error {
+	text-align: center;
+    color: red;
+    position: absolute;
+    width: 400px;
+    left: calc(50% - 200px);
+    top: calc(50% - 200px);
+
+}
+
+.error_msg {
+	text-align: center;
+    color: red;
+    width: 400px;
+    left: calc(50% - 200px);
+
+}
+a.admin_control {
+
+	color:#4E3939;
+}
+
+
+/* comments page */
+
+.comment_form {
+	position:relative;
+	width:400px;
+	margin:auto;
+	text-align:center;
+}
+
+.comments {
+	width:400px;
+	text-align:center;
+	margin-bottom:6px;
+	margin-top:6px;
+	font-family:latin_modern_mono10_regular;
+}
+
+.comment {
+	width:400px;
+	text-align:center;
+	font-family:latin_modern_mono10_regular;
+
+}
+
+.reg {
+	height:30px;
+}
+
+#nospace {
+	margin-top:0;
+}
+
+.landing_title {
+	font-family: Roboto;
+    font-size: 120px;
+    position: absolute;
+    width: 800px;
+    text-align: center;
+    left: calc(50% - 400px);
+    top: 250px;
+}
+
+.landing {
+	width: 100%;
+    height: 100vh;
+}
+
+.landing_msg {
+	    position: absolute;
+    width: 360px;
+    text-align: center;
+    left: calc(50% - 180px);
+    top: 330px;
 }

@@ -157,7 +157,7 @@ else {
 
 	//begin outputting the cart
 	//HTML STRUCTURE: cart_page contains cart_container and checkout
-	echo "<p><a href='shop.php'>Shop</a></p>";
+
 	echo '<div class="cart_page">';
 
 	
@@ -274,7 +274,8 @@ else {
 		}
 
 	}
-	echo "<div class='clear'><a href='cart.php?clear=clear'>Empty</a></div>";
+	echo "<span class='clear'><a href='cart.php?clear=clear'>Empty</a></span>";
+	echo "<span class='shop'><a href='shop.php'>Shop</a></span>";
 	echo '</div>';
 
 	//FINISH PAYPAL CHECKOUT BUTTON
