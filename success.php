@@ -101,6 +101,7 @@ if (isset($_GET['tx'])) {
    		//success message output
    		echo "<b>Payment Details</b><br>";
    		echo "Name: " . $firstname . " " . $lastname . "<br>";
+   		echo "Order Number: " . $transaction_id . "<br>";
     	echo "Amount: " . $amount . "<br>";
     	echo "A receipt of your payment has been emailed to :" . $payer_email . "<br>";
     	echo "Your package will be shipped to: " . $address_street . "<br>" . $address_city . " " . $address_state . ", " . $address_zip;

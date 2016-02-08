@@ -281,9 +281,9 @@ else {
 	//FINISH PAYPAL CHECKOUT BUTTON
 	$pp_checkout .= '
 			<input type = "hidden" name = "custom" value = "' . $prod_id_array . '">
-			<input type = "hidden" name = "return" value = "https://gentle-beyond-64568.herokuapp.com/success.php">
-			<input type = "hidden" name = "cancel_return" value = "https://gentle-beyond-64568.herokuapp.com/cancel.php">
-			<input type = "hidden" name = "notify_url" value = "https://gentle-beyond-64568.herokuapp.com/ipn2.php">
+			<input type = "hidden" name = "return" value = "https://homerootcreations.herokuapp.com/success.php">
+			<input type = "hidden" name = "cancel_return" value = "https://homerootcreations.herokuapp.com/cancel.php">
+			<input type = "hidden" name = "notify_url" value = "https://homerootcreations.herokuapp.com/ipn2.php">
 			<input type="hidden" name="charset" value="utf-8" /> 
 			<input type = "hidden" name = "rm" value = "2">
 			<input type = "hidden" name = "cbt" value = "Return to Homeroot Creations.">
